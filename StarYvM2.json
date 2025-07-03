@@ -1,0 +1,3 @@
+{
+    "content": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\n\n// Define 3 qubits and 3 classical bits\nqreg q[3];\ncreg c[3];\n\n// Past: Star light emission (kinetic term: -½ D^μD_μ)\nh q[0];         // Superposition for photon wave (e.g., 2 eV)\nbarrier q[0], q[1], q[2];\n\n// Present: Observation (entanglement and collapse)\ncx q[0], q[1];  // Light interacts with observer, nullifies (^ → 0)\nbarrier q[0], q[1], q[2];\n\n// Future: Quark position (flux and confinement)\nrz(0.01) q[2];  // Flux term Λ_QCD·f(t), θ ≈ 0.01 rad (200 MeV scale)\nx q[2];         // Confinement potential g²|A|² (quark state flip)\nbarrier q[0], q[1], q[2];\n\n// Measure to reflect ∞/^ = 0 cycle\nmeasure q[0] -> c[0];\nmeasure q[1] -> c[1];\nmeasure q[2] -> c[2];"
+}

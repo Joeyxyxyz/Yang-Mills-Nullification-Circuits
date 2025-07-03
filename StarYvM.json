@@ -1,0 +1,3 @@
+{
+    "content": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\n\n// Define 3 qubits and 3 classical bits\nqreg q[3];\ncreg c[3];\n\n// Past: Star light emission (photon in superposition)\nh q[0];\n\n// Present: Light reaches observer (entanglement and collapse)\ncx q[0], q[1];\n\n// Future: Quark position (flux and confinement)\ns q[2];         // Phase shift (Λ_QCD·f(t) approximation)\nx q[2];         // Confinement potential (g²|A|² approximation)\n\n// Measure all qubits to reflect nullification and re-quantification\nmeasure q[0] -> c[0];\nmeasure q[1] -> c[1];\nmeasure q[2] -> c[2];"
+}
